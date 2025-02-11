@@ -150,13 +150,13 @@ console.log("===================CALLBACK FUNCTION");
 // PERMITE EXECUTAR UMA FUNÇÃO DEPOIS DE UMA DETERMINADA AÇÃO;
 // É UMA FUNÇÃO QUE É PASSADA COMO PARâMETRO PARA OUTRA FUNÇÃO
 
-function somar  (a, b, callback) {
+function somar(a, b, callback) {
     let resultado = a + b;
     callback(resultado); // A função callback é executada aqui
 };
 
 // Função callback para exibir o resultado
-function mostarResultado(res)  {
+function mostarResultado(res) {
     console.log("O resultado é: ", res)
 }
 
@@ -168,7 +168,7 @@ somar(5, 3, mostarResultado);
 function buscarDados(cb) {
     console.log("Buscando dados...");
 
-    // Simulando uma operação assíncrona com setTimeout
+    // Simulando uma operação assíncrona com setTimeout(Executa apenas 1x)
     setTimeout(() => {
         const dados = { ìd: 1, name: "Arthur" };
         cb(dados);
@@ -184,8 +184,46 @@ function exibirDados(dados) {
 // Chamando a função e passando a callback
 buscarDados(exibirDados);
 
-// setInternal
+// setInternal // clearInterval
 
-setInterval(function(){
-    console.log("Executa a cada 30s com o setInternal")
-}, 30000);
+var inter = setInterval(() => {
+    console.log("Rodando interval")
+}, 500);
+
+setTimeout(() => {
+    console.log("Parando o interval")
+    clearInterval(inter);
+}, 5000);
+
+
+// KEYUP / KEYDOWN
+console.log("===================KEYUP / KEYDOWN");
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Enter") {
+        console.log("Apertou");
+    }
+
+});
+
+document.addEventListener("keyup", function (e) {
+    if (e.key === "Enter") {
+        console.log("Soltou")
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
