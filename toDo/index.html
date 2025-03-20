@@ -12,14 +12,14 @@
     <div class="container">
         <div class="top">
             <form action="" class="form">
-                <input type="text" placeholder="Crie sua task">
+                <input type="text" id="taskCreate" placeholder="Crie sua task">
                 <button id="btnCriar" type="submit">Criar</button>
             </form>
         </div>
         <!-- === -->
         <div class="middle">
-            <ul>
-                <li class="box template hide">
+            <ul id="task-list">
+                <li class="task-box template hide">
                     <span class="taskTitle"></span>
                     <button class="btnRemove">Remove</button>
                     <button class="btnDone">Done </button>

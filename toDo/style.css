@@ -1,4 +1,7 @@
-
+.task-box{
+    display: flex;
+    gap: 20px;
+}
 
 
 .hide{
